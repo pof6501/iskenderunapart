@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <title>İskenderun Apart | Günlük Haftalık Aylık Kiralık Daireler</title>
+    <!-- Google Fonts & Font Awesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #fefcf5;
+            color: #1e2a2f;
+            scroll-behavior: smooth;
+        }
+
+        /* ana container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* header / navbar */
+        header {
+            background: #ffffffdd;
+            backdrop-filter: blur(12px);
+            background: rgba(255, 255, 245, 0.96);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+            position: sticky;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+            border-bottom: 1px solid #f0e6d8;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 0;
+            flex-wrap: wrap;
+        }
+
+        .logo h1 {
+            font-size: 1.7rem;
+            font-weight: 800;
+            letter-spacing: -0.3px;
+            background: linear-gradient(135deg, #C95B2C, #E89B5E);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .logo p {
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: #b97f4b;
+            letter-spacing: 0.3px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+        }
+        .nav-links a {
+            text-decoration: none;
+            font-weight: 600;
+            color: #2c423f;
+            transition: 0.2s;
+        }
+        .nav-links a:hover {
+            color: #d seventeen;
+            color: #D二十五;
+            color: #C95B2C;
+        }
+        .btn-contact-nav {
+            background: #1e2a2f;
+            color: white !important;
+            padding: 8px 20px;
+            border-radius: 40px;
+            font-size: 0.85rem;
+        }
+        .btn-contact-nav:hover {
+            background: #C95B2C;
+            color: white !important;
+        }
+
+        /* hero section */
+        .hero {
+            padding: 60px 0 40px 0;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+        }
+        .hero-text {
+            flex: 1.2;
+        }
+        .hero-text .badge {
+            background: #ffe8dc;
+            display: inline-block;
+            padding: 6px 16px;
+            border-radius: 40px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #C95B2C;
+            margin-bottom: 20px;
+        }
+        .hero-text h2 {
+            font-size: 3.2rem;
+            font-weight: 800;
+            line-height: 1.2;
+            color: #1e2a2f;
+            margin-bottom: 20px;
+        }
+        .hero-text h2 span {
+            color: #C95B2C;
+        }
+        .hero-text p {
+            font-size: 1.1rem;
+            color: #4a5b5a;
+            line-height: 1.5;
+            margin-bottom: 30px;
+            max-width: 500px;
+        }
+        .features-list {
+            display: flex;
+            gap: 24px;
+            flex-wrap: wrap;
+            margin-bottom: 32px;
+        }
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: #f9f4ec;
+            padding: 8px 20px;
+            border-radius: 100px;
+        }
+        .feature-item i {
+            font-size: 1.2rem;
+            color: #C95B2C;
+        }
+        .hero-img {
+            flex: 0.9;
+            background: url('https://placehold.co/600x500/f5ede3/CC8855?text=İskenderun+Apart+Modern') no-repeat center center/cover;
+            border-radius: 48px;
+            min-height: 320px;
+            background-size: cover;
+            box-shadow: 0 30px 30px -20px rgba(0,0,0,0.1);
+            background-image: linear-gradient(125deg, #F3E9DE 0%, #F3E9DE 40%, #E1CFBB 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-img::after {
+            content: "🏖️ Konforlu Daireler";
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            background: rgba(0,0,0,0.6);
+            backdrop-filter: blur(8px);
+            color: white;
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        /* daire kartları (özellikler) */
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin: 60px 0 30px 0;
+            color: #1e2a2f;
+        }
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 70px;
+            height: 4px;
+            background: #C95B2C;
+            margin: 12px auto 0;
+            border-radius: 4px;
+        }
+
+        .card-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+            margin-bottom: 40px;
+        }
+        .card {
+            background: white;
+            border-radius: 32px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+            transition: transform 0.25s ease, box-shadow 0.25s;
+            width: 280px;
+            border: 1px solid #f1e4d8;
+        }
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 40px rgba(0,0,0,0.1);
+        }
+        .card-img {
+            height: 180px;
+            background-color: #ecd9c6;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        .card-img i {
+            font-size: 48px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #b97f4b80;
+        }
+        .card-content {
+            padding: 24px 20px 24px;
+        }
+        .card-content h3 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        .card-content p {
+            color: #6b5e55;
+            margin-bottom: 12px;
+            font-size: 0.9rem;
+        }
+        .price-tag {
+            font-weight: 800;
+            color: #C95B2C;
+            font-size: 1.2rem;
+            margin-top: 10px;
+        }
+
+        /* iletişim ve harita benzer bölüm */
+        .contact-section {
+            background: #ffffff;
+            border-radius: 48px;
+            padding: 40px 30px;
+            margin: 40px 0 60px;
+            box-shadow: 0 12px 35px rgba(0,0,0,0.03);
+            border: 1px solid #f0e0d0;
+        }
+        .contact-flex {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 48px;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .contact-info {
+            flex: 1;
+        }
+        .contact-info h3 {
+            font-size: 1.9rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+        .contact-detail {
+            margin: 24px 0;
+        }
+        .phone-link, .instagram-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 14px;
+            text-decoration: none;
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #1e2a2f;
+            background: #f6f0e9;
+            padding: 14px 28px;
+            border-radius: 80px;
+            transition: 0.2s;
+            margin-right: 18px;
+            margin-bottom: 14px;
+        }
+        .phone-link i, .instagram-link i {
+            font-size: 1.6rem;
+            color: #C95B2C;
+        }
+        .phone-link:hover, .instagram-link:hover {
+            background: #C95B2C;
+            color: white;
+        }
+        .phone-link:hover i, .instagram-link:hover i {
+            color: white;
+        }
+
+        .btn-wa {
+            background: #25D366;
+            color: white !important;
+        }
+        .btn-wa i {
+            color: white !important;
+        }
+        .btn-call {
+            background: #1e2a2f;
+            color: white !important;
+        }
+        .btn-call i {
+            color: white !important;
+        }
+
+        .social-badge {
+            margin-top: 20px;
+        }
+
+        .instagram-card {
+            flex: 0.8;
+            background: linear-gradient(145deg, #fdf8f2, #fff6ed);
+            padding: 24px;
+            border-radius: 40px;
+            text-align: center;
+        }
+        .instagram-card i {
+            font-size: 48px;
+            background: radial-gradient(circle at 30% 110%, #fdf497, #fdf497 25%, #fd5949 45%, #d6249f 70%, #285AEB 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .instagram-card h4 {
+            margin: 12px 0 8px;
+        }
+        .btn-instagram {
+            background: #d62976;
+            display: inline-block;
+            padding: 12px 28px;
+            border-radius: 40px;
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 16px;
+        }
+
+        /* sabit butonlar (float action) */
+        .fixed-buttons {
+            position: fixed;
+            bottom: 28px;
+            right: 28px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            z-index: 999;
+        }
+        .fixed-btn {
+            width: 60px;
+            height: 60px;
+            border-radius: 60px;
+            background: white;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: 0.2s;
+            font-size: 28px;
+            border: none;
+        }
+        .whatsapp-fixed {
+            background: #25D366;
+            color: white;
+        }
+        .call-fixed {
+            background: #1e2a2f;
+            color: white;
+        }
+        .fixed-btn:hover {
+            transform: scale(1.08);
+        }
+
+        footer {
+            background: #1e2a2f;
+            color: #cfd9d3;
+            padding: 32px 0;
+            text-align: center;
+            margin-top: 40px;
+            border-radius: 32px 32px 0 0;
+        }
+
+        @media (max-width: 800px) {
+            .navbar {
+                flex-direction: column;
+                gap: 12px;
+            }
+            .hero-text h2 {
+                font-size: 2.3rem;
+            }
+            .hero {
+                flex-direction: column;
+            }
+            .phone-link, .instagram-link {
+                padding: 12px 18px;
+                font-size: 1.0rem;
+            }
+            .fixed-buttons {
+                bottom: 20px;
+                right: 20px;
+            }
+        }
+        /* harita stil */
+        .map-placeholder {
+            background: #ddd2c4;
+            border-radius: 28px;
+            padding: 20px;
+            text-align: center;
+            color: #392e26;
+            font-size: 0.9rem;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <div class="navbar">
+            <div class="logo">
+                <h1>İskenderun Apart</h1>
+                <p>Günlük · Haftalık · Aylık | Full Eşyalı</p>
+            </div>
+            <div class="nav-links">
+                <a href="#home">Ana Sayfa</a>
+                <a href="#daireler">Daireler</a>
+                <a href="#iletisim">İletişim</a>
+                <a href="#iletisim" class="btn-contact-nav">Rezervasyon</a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<main>
+    <!-- HERO BÖLÜMÜ -->
+    <section id="home">
+        <div class="container hero">
+            <div class="hero-text">
+                <div class="badge"><i class="fas fa-key"></i> İskenderun'un en nezih kiralık apartı</div>
+                <h2>Konforlu, <span>Modern</span> ve Merkezi Konum</h2>
+                <p>Tamamen eşyalı dairelerimizle günlük, haftalık, aylık kiralamalarda ayrıcalıklı hizmet. Hatay İskenderun'da eviniz gibi hissedeceğiniz adres.</p>
+                <div class="features-list">
+                    <div class="feature-item"><i class="fas fa-wifi"></i> Hızlı Wi-Fi</div>
+                    <div class="feature-item"><i class="fas fa-tv"></i> Smart TV</div>
+                    <div class="feature-item"><i class="fas fa-kitchen-set"></i> Tam donanımlı mutfak</div>
+                    <div class="feature-item"><i class="fas fa-wind"></i> Klima</div>
+                </div>
+                <div>
+                    <a href="#iletisim" style="background:#C95B2C; color:white; padding:14px 30px; border-radius: 40px; text-decoration:none; font-weight:600; display:inline-block;"><i class="fas fa-calendar-alt"></i> Hemen Bilgi Al</a>
+                </div>
+            </div>
+            <div class="hero-img">
+                <!-- dekoratif arka plan görseli -->
+            </div>
+        </div>
+    </section>
+
+    <!-- DAİRE SEÇENEKLERİ -->
+    <div class="container" id="daireler">
+        <div class="section-title">Özel Dairelerimiz</div>
+        <div class="card-grid">
+            <div class="card">
+                <div class="card-img" style="background-image: url('https://placehold.co/600x400/ecd9c6/b88554?text=1+1+Modern'); background-size:cover;">
+                    <i class="fas fa-bed" style="opacity:0;"></i>
+                </div>
+                <div class="card-content">
+                    <h3>1+1 Deluxe Apart</h3>
+                    <p>Full eşyalı, balkonlu, modern mutfak ve yüksek tavan. Günlük / haftalık seçenekler.</p>
+                    <div class="price-tag">Günlük 1.200₺'den başlayan</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-img" style="background-image: url('https://placehold.co/600x400/e1cfbb/a56f3a?text=2+1+Aile'); background-size:cover;"></div>
+                <div class="card-content">
+                    <h3>2+1 Aile Suiti</h3>
+                    <p>Geniş salon, 2 yatak odası, otopark imkanı, şehir manzarası. Aylık kiralamalarda özel fiyat.</p>
+                    <div class="price-tag">Aylık 18.000₺'den itibaren</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-img" style="background-image: url('https://placehold.co/600x400/f3e2d2/c48652?text=Executive+Suit'); background-size:cover;"></div>
+                <div class="card-content">
+                    <h3>Executive Loft</h3>
+                    <p>Jakuzi, geniş teras ve deniz manzarası. Özel konuklar için lüks konsept.</p>
+                    <div class="price-tag">Günlük 1.900₺</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- NEDEN BİZ?  -->
+    <div class="container">
+        <div style="display: flex; flex-wrap: wrap; gap: 25px; justify-content: center; margin: 30px 0 10px;">
+            <div style="background: #fef5ea; border-radius: 28px; padding: 28px 20px; text-align: center; width: 220px;">
+                <i class="fas fa-phone-alt" style="font-size: 38px; color:#C95B2C;"></i>
+                <h4 style="margin: 15px 0 7px;">7/24 Ulaşım</h4>
+                <p style="font-size: 14px;">Rezervasyon ve destek hattı</p>
+            </div>
+            <div style="background: #fef5ea; border-radius: 28px; padding: 28px 20px; text-align: center; width: 220px;">
+                <i class="fas fa-map-marker-alt" style="font-size: 38px; color:#C95B2C;"></i>
+                <h4 style="margin: 15px 0 7px;">Merkezi Konum</h4>
+                <p style="font-size: 14px;">İskenderun sahil ve çarşıya yakın</p>
+            </div>
+            <div style="background: #fef5ea; border-radius: 28px; padding: 28px 20px; text-align: center; width: 220px;">
+                <i class="fas fa-star" style="font-size: 38px; color:#C95B2C;"></i>
+                <h4 style="margin: 15px 0 7px;">5 Yıldız Hizmet</h4>
+                <p style="font-size: 14px;">Profesyonel temizlik ve güvenlik</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- İLETİŞİM BÖLÜM + INSTAGRAM -->
+    <div class="container" id="iletisim">
+        <div class="contact-section">
+            <div class="contact-flex">
+                <div class="contact-info">
+                    <h3>Size en yakın apart deneyimi</h3>
+                    <p style="margin-bottom: 16px;">Rezervasyon ve fiyat bilgisi için bizi arayabilir ya da whatsapp üzerinden yazabilirsiniz. Günlük, haftalık ve aylık özel kampanyalar.</p>
+                    <div class="contact-detail">
+                        <a href="tel:+905345066466" class="phone-link btn-call"><i class="fas fa-phone-alt"></i> +90 534 506 64 66</a>
+                        <a href="https://wa.me/905345066466?text=Merhaba%20İskenderun%20Apart%2C%20daire%20kiralamak%20istiyorum." target="_blank" class="phone-link btn-wa"><i class="fab fa-whatsapp"></i> WhatsApp ile yaz</a>
+                    </div>
+                    <div class="social-badge">
+                        <a href="https://www.instagram.com/iskenderunapart31?igsh=MTRuZGhnNjM3NW0xaQ%3D%3D" target="_blank" class="instagram-link"><i class="fab fa-instagram"></i> @iskenderunapart31</a>
+                    </div>
+                    <div class="map-placeholder">
+                        <i class="fas fa-location-dot"></i> İskenderun / Hatay - Sahile 500m, otobüs duraklarına 3 dk yürüme mesafesi.
+                    </div>
+                </div>
+                <div class="instagram-card">
+                    <i class="fab fa-instagram fa-3x"></i>
+                    <h4>Sosyal medyada takip edin!</h4>
+                    <p>Yeni daireler, kampanyalar ve İskenderun önerileri için instagram sayfamızı ziyaret edin.</p>
+                    <a href="https://www.instagram.com/iskenderunapart31?igsh=MTRuZGhnNjM3NW0xaQ%3D%3D" target="_blank" class="btn-instagram"><i class="fab fa-instagram"></i> Instagram'ı ziyaret et</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- REFERANS / kısa not -->
+    <div class="container" style="text-align: center; margin-bottom: 40px;">
+        <p style="font-size: 0.9rem; background: #f3ede5; display: inline-block; padding: 8px 24px; border-radius: 40px;"><i class="fas fa-check-circle" style="color:#C95B2C;"></i> 7/24 giriş, ücretsiz internet, faturalar dahil aylık kiralama opsiyonu</p>
+    </div>
+</main>
+
+<footer>
+    <div class="container">
+        <p>© 2025 İskenderun Apart - Günlük Haftalık Aylık Full Eşyalı Kiralık Daireler</p>
+        <p style="margin-top: 12px; font-size: 0.8rem;"><i class="fas fa-phone-alt"></i> +90 534 506 64 66 | <i class="fab fa-instagram"></i> iskenderunapart31</p>
+        <p style="margin-top: 8px;">Hatay İskenderun'un en konforlu kiralık apartı</p>
+    </div>
+</footer>
+
+<!-- SABİT WHATSAPP VE ARAMA BUTONLARI -->
+<div class="fixed-buttons">
+    <a href="https://wa.me/905345066466?text=Merhaba%20İskenderun%20Apart%20ile%20iletişime%20geçmek%20istiyorum." target="_blank" class="fixed-btn whatsapp-fixed" aria-label="WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+    <a href="tel:+905345066466" class="fixed-btn call-fixed" aria-label="Ara">
+        <i class="fas fa-phone-alt"></i>
+    </a>
+</div>
+
+<!-- küçük ek mobil düzen için smooth scroll-->
+<script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            if (href === "#" || href === "") return;
+            const target = document.querySelector(href);
+            if (target) {
+                e.preventDefault();
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+    });
+    // küçük iyileştirme: placeholder görsellerin yüklenmemesi durumunda arka plan renkleri güzel dursun
+    const imgCards = document.querySelectorAll('.card-img');
+    imgCards.forEach(card => {
+        if(!card.style.backgroundImage || card.style.backgroundImage === 'none'){
+            card.style.backgroundColor = '#ecd9c6';
+        }
+    });
+</script>
+</body>
+</html>
